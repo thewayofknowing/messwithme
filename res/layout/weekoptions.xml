@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/selectday"
+        android:textSize="20sp" />
+    
+    
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" >
+    </ListView>
+    
+     <LinearLayout 
+        android:id="@+id/refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/listView1"
+        android:clickable="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+        
+        <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Refresh"
+	        android:layout_gravity="center_vertical"
+	        android:textSize="16sp" />
+        
+        <ImageView
+	        android:id="@+id/imageView1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="2dp"
+	        android:src="@drawable/ic_action_refresh" />
+    </LinearLayout>
+        
+    <TextView
+            android:id="@+id/note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+        	android:layout_below="@id/refresh"
+        	android:gravity="center_horizontal"
+        	android:text="(Please inform the authors in case of changes in menu)"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</RelativeLayout>

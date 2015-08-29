@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.iiit.messwithme"
+    android:versionCode="7"
+    android:versionName="1.06" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="21" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo" >
+        
+        <receiver android:name="com.iiit.messwithme.widget.MyWidgetProvider" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+      			<action android:name="android.appwidget.action.APPWIDGET_ENABLED" />
+                <action android:name="com.iiit.messwithme.WIDGET_UPDATE_ACTION"/>
+                <action android:name="com.iiit.messwithme.WIDGET_OPEN_ACTIVITY"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwidgetprovider" />
+        </receiver>
+        
+         <meta-data android:name="com.google.android.gms.version"
+      		android:value="@integer/google_play_services_version" />
+        
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.NoActionBar" >
+            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+	    <activity android:name="com.iiit.messwithme.AboutUsActivity"
+	        android:screenOrientation="portrait"/>
+	    <activity android:name="com.iiit.messwithme.ViewMessMenuActivity"
+	        android:screenOrientation="portrait"
+	        android:theme="@android:style/Theme.Holo.NoActionBar"/>
+	    <activity android:name="com.iiit.messwithme.ViewMessWeekOptions"
+	        android:screenOrientation="portrait"
+	        android:theme="@android:style/Theme.Holo.NoActionBar"/>
+	    <activity android:name="com.iiit.messwithme.LoginActivity"
+	        android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.Holo.NoActionBar"
+			android:windowSoftInputMode="stateHidden"/>
+	    <activity android:name="com.iiit.messwithme.UserMenuActivity"
+	        android:screenOrientation="portrait"/>
+	    <activity android:name="com.iiit.messwithme.ViewMessRegistrationActivity"
+	        android:screenOrientation="portrait"/>
+	    <activity android:name="com.iiit.messwithme.CancelMessActivity"
+	        android:screenOrientation="portrait"/>
+	    <activity android:name="com.iiit.messwithme.ChangeMessDatewiseActivity"
+	        android:screenOrientation="portrait"/>
+	    <activity android:name="com.iiit.messwithme.ChangeMessDaywiseActivity"
+	        android:screenOrientation="portrait"/>
+	    <activity android:name="com.iiit.messwithme.ViewMessOfflineActivity"
+	        android:screenOrientation="portrait"/>
+	    <activity android:name="com.iiit.messwithme.ViewBillActivity"
+	        android:screenOrientation="portrait"/>
+	    <service android:name="com.iiit.messwithme.widget.MyWidgetService"/>
+	    
+	     <!--Include the AdActivity configChanges and theme. -->
+        <activity android:name="com.google.android.gms.ads.AdActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+	    
+    </application>
+	
+</manifest>
